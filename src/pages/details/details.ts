@@ -19,7 +19,7 @@ export class DetailsPage {
  item:string;
  constructor(public navCtrl: NavController, public navParams: NavParams,public requettes_service:Provider) {
     let item = this.navParams.get('item');
-    console.log("ok page tranfere "+item.name)
+    console.log("ok page tranfere "+item.title)
     this.item=item;
 
   }

@@ -11,15 +11,15 @@
     <ion-card-content>
       <ion-item>
         <h3 text-center>Liste des annonces</h3>
-      </ion-item>g
+      </ion-item>
     </ion-card-content>
   </ion-card>
   <p>
   <ion-list>
 
     <button ion-item *ngFor="let item of items | async" (click)="itemSelected(item)">
-      {{ item.name }} --> {{ item.country}}
-      à pour Capital :{{ item.capital }}
+      {{ item.title }} : {{ item.category}}
+      Description : {{ item.description }}
     </button>
 
     <ion-fab center middle>

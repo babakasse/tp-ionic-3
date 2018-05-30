@@ -27,10 +27,11 @@ export class AjoutPage {
   todo = {}
 
   logForm() {
-    /*console.log(this.todo.name);
-    console.log(this.todo.capital);
-    console.log(this.todo.country);
-    console.log(this.todo.popultation); */
+    /*
+    console.log(this.todo.category);
+    console.log(this.todo.title);
+    console.log(this.todo.description);
+    console.log(this.todo.author); */
    this.requettes_service.ajouter_global(this.todo)
   }
 

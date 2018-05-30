@@ -24,7 +24,7 @@ export class ModifierPage {
    }
 
   modifierForm(this){
-    console.log('modification '+this.item.name);
+    console.log('modification '+this.item.title);
     this.requettes_service.modifier_global(this.item);
       //this.requette.modifier_global(item)
     }

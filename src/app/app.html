@@ -1,9 +1,12 @@
 <ion-nav [root]="rootPage"></ion-nav>
-<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>
+<ion-list-header *ngIf="auth.getEmail()"></ion-list-header>
 <ion-item (click)="logout()" *ngIf="auth.authenticated">
     <ion-icon name="log-out" item-left></ion-icon>
     Log out
-    </ion-item>
+
+    <ion-icon name="user" item-right></ion-icon>
+    {{auth.getEmail()}}
+</ion-item>
     <ion-item (click)="login()" *ngIf="!auth.authenticated">
     <ion-icon name="log-in" item-left></ion-icon>
     Log in
