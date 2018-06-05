@@ -7,7 +7,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import {Camera} from '@ionic-native/camera'
-import {storage} from 'firebase';
 import {File} from '@ionic-native/file';
 import {FileChooser} from '@ionic-native/file-chooser';
 import { Geolocation } from '@ionic-native/geolocation';

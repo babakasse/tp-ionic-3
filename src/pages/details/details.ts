@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Provider } from '../../providers/provider/provider';
 import { ModifierPage } from './../modifier/modifier';
+import {HomePage} from "../home/home";
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the DetailsPage page.
@@ -17,17 +19,20 @@ import { ModifierPage } from './../modifier/modifier';
 })
 export class DetailsPage {
  item:string;
- constructor(public navCtrl: NavController, public navParams: NavParams,public requettes_service:Provider) {
+ constructor(public navCtrl: NavController, public navParams: NavParams,public requettes_service:Provider,public alerCtrl: AlertController) {
     let item = this.navParams.get('item');
-    console.log("ok page tranfere "+item.name)
+    console.log("ok page tranfere "+item.title)
     this.item=item;
 
   }
 
-  supprimer(item){
+  supprimer(item,num){
     console.log("suppression"+item.id)
     this.requettes_service.supprimer_global(item)
     //this.requette.supprimer_global(item)
+    console.log("home"+num)
+    this.navCtrl.push(HomePage,{num:num});
+
     }
 
   modifier(item){
@@ -35,7 +40,31 @@ export class DetailsPage {
     this.navCtrl.push(ModifierPage,{item:item});
     }
 
-  ionViewDidLoad() {
+    doConfirm(item,num) {
+        let confirm = this.alerCtrl.create({
+            title: 'Supprimer cette annonce ?',
+            message: 'Voulez-vous vraiment supprimer cette annonce ?',
+            buttons: [
+                {
+                    text: 'Non',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Oui',
+                    handler: () => {
+                        console.log('Agree clicked');
+                        this.supprimer(item, num);
+                    }
+                }
+            ]
+        });
+        confirm.present()
+    }
+
+
+    ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage')
   }
 

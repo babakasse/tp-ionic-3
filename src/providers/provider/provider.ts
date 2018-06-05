@@ -23,17 +23,17 @@ export class Provider {
   requettesProvider:any=[];
 
   constructor(public db: AngularFirestore) {
-this.itemsCollection = db.collection<Items>('cities'); //ref()
-console.log('Hello RequettesProvider Provider');
+this.itemsCollection = db.collection<Items>('advertisements'); //ref()
+console.log('Hello Requettes Provider Provider');
 }
 
   ajouter_global(item){
-    console.log("ajout de la page requette"+item.id)
-    this.db.collection("cities").add({
-      capital: item.capital,
-      country: item.country,
-      name:item.name,
-      population:item.population
+    console.log("ajout de la page requette "+item.id)
+    this.db.collection("advertisements").add({
+      category: item.category,
+      title: item.title,
+      description:item.description,
+      author:item.author
     })
       .then( (docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -45,17 +45,17 @@ console.log('Hello RequettesProvider Provider');
 
   supprimer_global(item){
     console.log("de la page requette"+item.id)
-    this.db.collection('cities').doc(item.id).delete();
+    this.db.collection('advertisements').doc(item.id).delete();
     }
 
     modifier_global(item){
       console.log("modificatoin de la page requette"+item.id)
       console.log("ajout de la page requette"+item.id)
-      this.db.collection("cities").doc(item.id).update({
-      capital: item.capital,
-      country: item.country,
-      name:item.name,
-      population:item.population
+      this.db.collection("advertisements").doc(item.id).update({
+      category: item.category,
+      title: item.title,
+      description:item.description,
+      author:item.author
       })
       .then( (docRef) => {
       console.log("Document written with ID: ", docRef);
@@ -69,7 +69,7 @@ console.log('Hello RequettesProvider Provider');
         console.log("modificatoin photo"+item.id)
         console.log("ajout de la page requette"+item.id)
         console.log("nom photo "+nom_photo);
-        this.db.collection("cities").doc(item.id).update({
+        this.db.collection("advertisements").doc(item.id).update({
         photo: nom_photo
         })
         .then( (docRef) => {

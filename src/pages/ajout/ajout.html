@@ -13,25 +13,40 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card padding-top>
+    <ion-card-content>
+      <ion-item>
+        <h1 text-center>Ajout d'une annonce</h1>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <p>
 
-  <form (ngSubmit)="logForm()">
+  <form (ngSubmit)="Ajouter(this)">
+
+      <ion-item>
+        <ion-label>Catégorie</ion-label>
+        <ion-select [(ngModel)]="todo.category" name="category">
+          <ion-option value="informatique">Informatique</ion-option>
+          <ion-option value="immobilier">Immobilier</ion-option>
+          <ion-option value="automobile">Automobile</ion-option>
+          <ion-option value="maison">Maison</ion-option>
+        </ion-select>
+      </ion-item>
+
     <ion-item>
-      <ion-label>name</ion-label>
-      <ion-input type="text" [(ngModel)]="todo.name" name="name"></ion-input>
+      <ion-label>Titre</ion-label>
+      <ion-textarea [(ngModel)]="todo.title" name="title"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>capital</ion-label>
-      <ion-textarea [(ngModel)]="todo.capital" name="capital"></ion-textarea>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="todo.description" name="description" default></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>population</ion-label>
-      <ion-textarea [(ngModel)]="todo.population" name="population" default></ion-textarea>
+      <ion-label>Auteur</ion-label>
+      <ion-textarea [(ngModel)]="todo.author" name="author"></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-label>country</ion-label>
-      <ion-textarea [(ngModel)]="todo.country" name="country"></ion-textarea>
-    </ion-item>
-    <button ion-button type="submit" block>Add Todo</button>
+    <button ion-button type="submit" block>Ajouter </button>
   </form>
 
 </ion-content>

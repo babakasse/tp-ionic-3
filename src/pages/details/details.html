@@ -14,22 +14,41 @@
 
 
 <ion-content padding>
+
   <ion-card>
+    <img src="http://www.efresh.com.pl/blog/wp-content/uploads/2016/07/dddd.jpg">
     <ion-card-content>
       <ion-card-title>
-        nom : {{item.name}} <br>
-        population : {{item.population}} <br>
-        pays : {{item.country}}
+        Titre : {{item.title}}
       </ion-card-title>
       <p>
-      </p>
+       {{item.description}}
+     </p>
+      <br>
+      <h3 text-right>
+        Publiée par : {{item.author}}
+      </h3>
     </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="secondary" icon-start>
+          <ion-icon name='call'></ion-icon>
+          Appeler
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="primary" icon-start (click)="modifier(item)">
+          <ion-icon name='create'></ion-icon>
+          Modifier
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start (click)="doConfirm(item,num)">
+          <ion-icon name='trash'></ion-icon>
+          Suprimer
+        </button>
+      </ion-col>
+    </ion-row>
   </ion-card>
 
-  <ion-fab center middle>
-    <button ion-fab mini (click)="supprimer(item)"><ion-icon name="trash"></ion-icon>
-    </button>
-    <button ion-fab mini (click)="modifier(item)"><ion-icon name="create"></ion-icon>
-    </button>
-  </ion-fab>
 </ion-content>
