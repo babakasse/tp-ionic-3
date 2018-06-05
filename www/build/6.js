@@ -27,7 +27,7 @@ var AjoutPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__ajout__["a" /* AjoutPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ajout__["a" /* AjoutPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ajout__["a" /* AjoutPage */]),
             ],
         })
     ], AjoutPageModule);

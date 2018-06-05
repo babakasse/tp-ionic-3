@@ -27,7 +27,7 @@ var SloganPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__slogan__["a" /* SloganPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__slogan__["a" /* SloganPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__slogan__["a" /* SloganPage */]),
             ],
         })
     ], SloganPageModule);
@@ -74,7 +74,7 @@ var SloganPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-slogan',template:/*ion-inline-start:"/Users/babakasse/Projects/ionic/tp-ionic-3/src/pages/slogan/slogan.html"*/'<!--\n  Generated template for the SloganPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>slogan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/babakasse/Projects/ionic/tp-ionic-3/src/pages/slogan/slogan.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SloganPage);
     return SloganPage;
 }());

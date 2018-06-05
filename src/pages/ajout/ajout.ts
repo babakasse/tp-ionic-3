@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Provider } from '../../providers/provider/provider';
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the AjoutPage page.
@@ -26,13 +27,10 @@ export class AjoutPage {
   }
   todo = {}
 
-  logForm() {
-    /*
-    console.log(this.todo.category);
-    console.log(this.todo.title);
-    console.log(this.todo.description);
-    console.log(this.todo.author); */
-   this.requettes_service.ajouter_global(this.todo)
+  Ajouter(num) {
+   this.requettes_service.ajouter_global(this.todo);
+      console.log("home"+num)
+      this.navCtrl.push(HomePage,{num:num});
   }
 
 }

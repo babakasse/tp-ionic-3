@@ -16,17 +16,24 @@
   <ion-card padding-top>
     <ion-card-content>
       <ion-item>
-        <h3 text-center>Ajout d'une annonce</h3>
+        <h1 text-center>Ajout d'une annonce</h1>
       </ion-item>
     </ion-card-content>
   </ion-card>
   <p>
 
-  <form (ngSubmit)="logForm()">
-    <ion-item>
-      <ion-label>Catégorie</ion-label>
-      <ion-input type="text" [(ngModel)]="todo.category" name="category"></ion-input>
-    </ion-item>
+  <form (ngSubmit)="Ajouter(this)">
+
+      <ion-item>
+        <ion-label>Catégorie</ion-label>
+        <ion-select [(ngModel)]="todo.category" name="category">
+          <ion-option value="informatique">Informatique</ion-option>
+          <ion-option value="immobilier">Immobilier</ion-option>
+          <ion-option value="automobile">Automobile</ion-option>
+          <ion-option value="maison">Maison</ion-option>
+        </ion-select>
+      </ion-item>
+
     <ion-item>
       <ion-label>Titre</ion-label>
       <ion-textarea [(ngModel)]="todo.title" name="title"></ion-textarea>

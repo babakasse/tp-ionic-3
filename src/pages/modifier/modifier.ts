@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Provider } from '../../providers/provider/provider';
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the ModifierPage page.
@@ -23,13 +24,19 @@ export class ModifierPage {
  
    }
 
-  modifierForm(this){
+    modifierForm(this){
     console.log('modification '+this.item.title);
     this.requettes_service.modifier_global(this.item);
       //this.requette.modifier_global(item)
     }
 
-  ionViewDidLoad() {
+    home(num){
+        console.log("home"+num)
+        this.navCtrl.push(HomePage,{num:num});
+    }
+
+
+    ionViewDidLoad() {
     console.log('ionViewDidLoad ModifierPage');
   }
 

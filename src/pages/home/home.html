@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -7,28 +8,44 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card padding-top>
+  <ion-card>
     <ion-card-content>
       <ion-item>
-        <h3 text-center>Liste des annonces</h3>
+        <h1 text-center>Liste des annonces</h1>
       </ion-item>
     </ion-card-content>
   </ion-card>
   <p>
   <ion-list>
 
-    <button ion-item *ngFor="let item of items | async" (click)="itemSelected(item)">
-      {{ item.title }} : {{ item.category}}
-      Description : {{ item.description }}
-    </button>
-
-    <ion-fab center middle>
-      <button ion-fab mini (click)="ajouter(this)"><ion-icon name="add"></ion-icon></button>
-      <button ion-fab mini (click)="photo(this)"><ion-icon name="camera"></ion-icon></button>
-      <button ion-fab mini (click)="map(this)"><ion-icon name="map"></ion-icon></button>
-    </ion-fab>
-
+  <ion-list>
+    <ion-item ion-item *ngFor="let item of items | async" (click)="itemSelected(item)">
+      <ion-thumbnail item-start>
+        <img src="http://www.efresh.com.pl/blog/wp-content/uploads/2016/07/dddd.jpg">
+      </ion-thumbnail>
+      <h2>{{item.title}}</h2>
+      <p>Publié par {{item.author}}</p>
+      <button ion-button clear item-end>Details</button>
+    </ion-item>
+  </ion-list>
 
 </ion-list>
-  </p>
 </ion-content>
+
+<ion-footer>
+  <ion-card>
+    <ion-card-content>
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-fab mini (click)="ajouter(this)"><ion-icon name="add"></ion-icon></button>
+        </ion-col>
+        <ion-col text-center>
+          <button ion-fab mini (click)="photo(this)"><ion-icon name="camera"></ion-icon></button>
+        </ion-col>
+        <ion-col text-center>
+          <button ion-fab mini (click)="map(this)"><ion-icon name="map"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-footer>
