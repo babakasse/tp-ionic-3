@@ -4,6 +4,7 @@ import { Provider } from '../../providers/provider/provider';
 import { ModifierPage } from './../modifier/modifier';
 import {HomePage} from "../home/home";
 import { AlertController } from 'ionic-angular';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the DetailsPage page.
@@ -19,7 +20,7 @@ import { AlertController } from 'ionic-angular';
 })
 export class DetailsPage {
  item:string;
- constructor(public navCtrl: NavController, public navParams: NavParams,public requettes_service:Provider,public alerCtrl: AlertController) {
+ constructor(public navCtrl: NavController, public navParams: NavParams,public requettes_service:Provider,public alerCtrl: AlertController,private callNumber: CallNumber) {
     let item = this.navParams.get('item');
     console.log("ok page tranfere "+item.title)
     this.item=item;
@@ -61,6 +62,12 @@ export class DetailsPage {
             ]
         });
         confirm.present()
+    }
+
+    call(number){
+        this.callNumber.callNumber(number, true)
+            .then(res => console.log('Launched dialer!', res))
+            .catch(err => console.log('Error launching dialer', err));
     }
 
 

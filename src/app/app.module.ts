@@ -12,6 +12,7 @@ import {FileChooser} from '@ionic-native/file-chooser';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from '../services/auth.service';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
+import { CallNumber } from '@ionic-native/call-number';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -52,7 +53,7 @@ export const firebaseConfig = {
 	  AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgxErrorsModule 
+    NgxErrorsModule
 
   ],
   bootstrap: [IonicApp],
@@ -73,7 +74,8 @@ export const firebaseConfig = {
     SplashScreen,FileChooser,File,Geolocation,AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Provider,
-    Camera
+    Camera,
+      CallNumber
     ]
 })
 export class AppModule {}

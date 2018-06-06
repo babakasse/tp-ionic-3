@@ -87,4 +87,5 @@
     <allow-navigation href="http://10.69.3.7:8101" />
     <engine name="android" spec="6.4.0" />
     <engine name="ios" spec="4.5.4" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
 </widget>
