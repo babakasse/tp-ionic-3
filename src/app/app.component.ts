@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
+import {MapPage} from "../pages/map/map";
+import {PhotoPage} from "../pages/photo/photo";
 
 @Component({
   templateUrl: 'app.html'
@@ -13,8 +15,10 @@ import { AuthService } from '../services/auth.service';
 export class MyApp {
   //rootPage:any = HomePage;
   rootPage:any = LoginPage;
+    isAndroid: boolean = false;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private auth:AuthService) {
+      this.isAndroid = platform.is('android');
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

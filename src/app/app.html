@@ -20,3 +20,12 @@
     <button (click)="logout()" *ngIf="auth.authenticated" color="danger">
         <ion-icon name="log-out"></ion-icon> Se deconnecter</button>
 </ion-buttons>
+
+<ion-list *ngIf="auth.authenticated">
+    <ion-tabs class="tabs-icon-text" [color]="isAndroid ? 'royal' : 'primary'">
+        <ion-tab tabIcon="home" tabTitle="Accueil" [root]="rootPage"></ion-tab>
+        <ion-tab tabIcon="map" (click)="map(this)" [root]="rootPage"></ion-tab>
+        <ion-tab tabIcon="camera" (click)="photo(this)"  tabTitle="photo" [root]="rootPage"></ion-tab>
+        <ion-tab tabIcon="log-out" (click)="logout()" tabTitle="Logout"></ion-tab>
+    </ion-tabs>
+</ion-list>
