@@ -33,7 +33,8 @@ console.log('Hello Requettes Provider Provider');
       category: item.category,
       title: item.title,
       description:item.description,
-      author:item.author
+      author:item.author,
+      phone:item.phone
     })
       .then( (docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -55,7 +56,9 @@ console.log('Hello Requettes Provider Provider');
       category: item.category,
       title: item.title,
       description:item.description,
-      author:item.author
+      author:item.author,
+      phone:item.phone
+
       })
       .then( (docRef) => {
       console.log("Document written with ID: ", docRef);

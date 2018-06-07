@@ -12,9 +12,9 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
   <ion-card padding-top>
-    <ion-card-content>
+    <ion-card-content >
       <ion-item>
         <h1 text-center>Ajout d'une annonce</h1>
       </ion-item>
@@ -45,6 +45,10 @@
     <ion-item>
       <ion-label>Auteur</ion-label>
       <ion-textarea [(ngModel)]="todo.author" name="author"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Telephone</ion-label>
+      <ion-textarea [(ngModel)]="todo.phone" name="phone"></ion-textarea>
     </ion-item>
     <button ion-button type="submit" block>Ajouter </button>
   </form>

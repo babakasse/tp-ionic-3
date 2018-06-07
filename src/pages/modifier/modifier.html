@@ -17,7 +17,7 @@
   <ion-card padding-top>
     <ion-card-content>
       <ion-item>
-        <h3 text-center>Modification de l'annonce </h3>
+        <h2 text-center>Modification de l'annonce </h2>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -42,6 +42,11 @@
         <ion-label>Auteur</ion-label>
         <ion-input [(ngModel)]="item.author" name="author"
         value={{item.author}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telephone</ion-label>
+        <ion-input [(ngModel)]="item.phone" name="phone"
+                   value={{item.phone}}></ion-input>
       </ion-item>
       <button ion-button type="submit" block (click)="home(this)">Modifier</button>
     </form>
